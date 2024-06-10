@@ -1,0 +1,3 @@
+django-admin startproject text_detection_project
+cd text_detection_project
+django-admin startapp text_detection_app
