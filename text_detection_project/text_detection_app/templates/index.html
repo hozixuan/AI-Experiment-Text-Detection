@@ -10,9 +10,16 @@
 <body>
   <hr>
   <h1>Text Detection</h1>
+  <h2>Detect Text</h2>
   <form action="/api/text/detect_text" method="post" enctype="multipart/form-data">
     <input type="file" name="file">
     <button type="submit">Detect Text</button>
+  </form>
+  <hr>
+  <h2>Detect and Draw Text</h2>
+  <form action="/api/text/detect_and_draw_text" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Detect and Draw Text</button>
   </form>
   <hr>
 </body>
