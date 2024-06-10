@@ -18,6 +18,7 @@ router = Router()
 
 @router.post("/detect_text")
 def detect_text(request: HttpRequest, file: UploadedFile = File(...)):
+    """This is the endpoint to perform detection return all text result. Use form upload with key `file`"""
     try:
         image_byte = file.read()
         results = reader.readtext(image_byte)
@@ -34,6 +35,7 @@ def detect_and_draw_text(
     request: HttpRequest,
     file: UploadedFile = File(...),
 ) -> HttpResponse:
+    """This is the endpoint to perform detection and return drawing detection location. Use form upload with key `file`"""
     try:
         image_byte = file.read()
         img = Image.open(io.BytesIO(image_byte))
@@ -63,4 +65,5 @@ from django.shortcuts import render
 
 @router.get("/web")
 def get_detect_text(request):
+    """This is the webpage to test the two endpoint with a html page."""
     return render(request, "index.html")
